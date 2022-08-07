@@ -12,6 +12,7 @@ st.title('Open-Powerlifitng Data')
 __location__ = os.path.realpath(
     os.path.join(os.getcwd(), os.path.dirname(__file__)))
 
+"""
 DATA_PATH = os.path.join(__location__, 'openipf-2022-01-09/openipf-2022-01-09-3336416a.csv')
 
 @st.cache
@@ -59,6 +60,11 @@ df = filter_data(df)
 male_wc = ['59','66','74','83','93','105','120','120+']
 
 df_max_cleaned,df_mean_cleaned,df_count_cleaned = get_max_mean_count(df,male_wc)
+"""
+
+df_max_cleaned = pd.read_csv(os.path.join(__location__, 'df_max_cleaned.csv'))
+df_mean_cleaned = pd.read_csv(os.path.join(__location__, 'df_mean_cleaned.csv'))
+df_count_cleaned = pd.read_csv(os.path.join(__location__, 'df_count_cleaned.csv')
 
 p1 = plot_data(df_max_cleaned,"Growth mens highest total over the years","year","TotalKg")
 p2 = plot_data(df_mean_cleaned,"Growth mens mean total over the years","year","TotalKg")
